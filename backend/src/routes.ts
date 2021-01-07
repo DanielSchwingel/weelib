@@ -1,6 +1,5 @@
 import express from 'express';
 import UsersController from './controllers/Users';
-import User from './database/entities/User';
 
 const routes = express.Router();
 
