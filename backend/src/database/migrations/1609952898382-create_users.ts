@@ -16,25 +16,24 @@ export class createUsers1609952898382 implements MigrationInterface {
                 {
                     name: 'name',
                     type: 'varchar',
-                    isNullable: false
                 },
                 {
                     name: 'email',
                     type: 'varchar',
-                    isNullable: false
                 },
                 {
                     name: 'password',
                     type: 'varchar',
-                    isNullable: false
                 },
                 {
                     name: 'expiration_rp',
-                    type: 'timestamp'
+                    type: 'timestamp',
+                    isNullable: true
                 },
                 {
                     name: 'token_rp',
-                    type: 'varchar'
+                    type: 'varchar',
+                    isNullable: true,
                 },
                 {
                     name: 'category_id',
