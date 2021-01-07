@@ -40,7 +40,7 @@ export default {
       const repository = getRepository(User);
       const user = await repository.findOne(id);
       if (user) {
-         await repository.delete(user);
+         await repository.remove(user);
          return response.status(200).json(user);
       }
       return response.status(404).json({message: 'User not found'})
