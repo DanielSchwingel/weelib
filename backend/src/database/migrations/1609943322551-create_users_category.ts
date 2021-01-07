@@ -16,7 +16,6 @@ export class createUsersCategory1609943322551 implements MigrationInterface {
                 {
                     name: 'description',
                     type: 'varchar',
-                    isNullable: false,
                 }
             ]
         }))

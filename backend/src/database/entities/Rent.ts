@@ -9,17 +9,15 @@ export default class Rent {
 
    @OneToOne(type=> Book, {
       eager: true,
-      cascade: true,
    })
    @JoinColumn({name: 'book_id'})
    book: Book;
 
    @OneToOne(type=> User, {
-      eager: true,
-      cascade: true,
+      eager: true
    })
    @JoinColumn({name: 'user_id'})
-   user: User
+   user: User;
 
    @Column()
    start: Date;
