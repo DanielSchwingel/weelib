@@ -1,0 +1,91 @@
+#page-landing {
+   width: 100vw;
+   height: 100vh;
+   
+   background: var(--background-main-color);
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+}
+
+#page-landing .content {
+   width: 90%;
+   height: 90%;
+   background: url('../../assets/images/landing.svg') no-repeat 80% center;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+#page-landing .content header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+#page-landing .content header img {
+   width: 15.625rem;
+}
+
+#page-landing .content header a {
+   width: 13.75rem;
+   height: 3.5rem;
+   border-radius: 1.25rem;
+
+   background: var(--medium-blue-color);
+   
+   color: var(--white-color);
+   font-weight: 700;
+   text-decoration: none;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   transition: all .2s;
+}
+
+#page-landing .content header a:hover {
+   background: var(--light-blue-color);
+   color: var(--high-blue-color);
+}
+
+#page-landing .content main {
+   display: flex;
+   justify-content: space-between;
+   align-items: flex-end;
+   margin-bottom: 3.12rem; 
+}
+
+#page-landing .content main h1 {
+   font-size: 4.5rem;
+   line-height: 5.2rem;
+   font-weight: 900;
+   margin-bottom: 3.12rem; 
+   width: 40%;
+}
+
+#page-landing .content main p {
+   font-size: 1.25rem;
+}
+
+#page-landing .content main a {
+   width: 3.5rem;
+   height: 3.5rem;
+   border-radius: 1.25rem;
+
+   background: var(--light-yellow);
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   transition: all 0.2s;
+}
+
+#page-landing .content main a:hover {
+   background: var(--light-blue-color);
+}
