@@ -1,6 +1,7 @@
 import express from 'express';
 import UsersController from './controllers/Users';
 import BooksController from './controllers/Books';
+import RentsController from './controllers/Rents';
 
 const routes = express.Router();
 
@@ -14,5 +15,10 @@ routes.get('/books', BooksController.index)
 routes.get('/books/:id', BooksController.show);
 routes.put('/books/:id', BooksController.update);
 routes.delete('/books/:id', BooksController.delete);
+
+routes.post('/rents', RentsController.create);
+routes.get('/rents', RentsController.index);
+routes.get('/rents/:id', RentsController.show);
+routes.put('/rents/:id', RentsController.update);
 
 export default routes;
