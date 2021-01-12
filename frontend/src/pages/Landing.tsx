@@ -12,7 +12,7 @@ const Landing: React.FC = ()=> {
          <div className="content">
             <header>
                <img src={logoImg} alt="Logo"/>
-               <Link to=''>
+               <Link to='login'>
                   Acesso restrito
                </Link>
             </header>
