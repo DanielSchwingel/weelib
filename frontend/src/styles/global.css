@@ -10,7 +10,12 @@
    --high-yellow: #8D734B;
    --light-yellow: #FFD666;
 
-   --green: #37C77F;
+   --green-color: #37C77F;
+
+   --title-color: #5C8599;
+   --label-color: #8FA7B2;
+   --border-input-color:#A1E9C5;
+   --background-input-color: #F5F8FA;
 }
 
 * {
@@ -26,4 +31,22 @@ body {
 
 body, input, button, textarea {
    font: 1rem Nunito, sans-serif;
+}
+
+button.success {
+   margin-top: 1rem;
+   width: 100%;
+   height: 3.5rem;
+   border: none;
+   border-radius: 1.25rem;
+   outline: 0;
+
+   color: var(--white-color);
+   font-weight: bold;
+
+   background: var(--green-color);
+}
+
+button.success:hover{
+   opacity: .9;
 }
