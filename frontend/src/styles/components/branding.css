@@ -25,14 +25,19 @@
   
 } 
 
-#component-branding form {
-   min-width: 70%;
+#component-branding main form {
+   width: 70%;
 }
 
 #component-branding main h1 {
    font-weight: bold;
    font-size: 2rem;
    color: var(--title-color);
+}
+
+#component-branding main p {
+   color: var(--title-color);
+   margin: 2rem 0rem;
 }
 
 #component-branding main a.back-link {
