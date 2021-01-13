@@ -11,6 +11,7 @@
    --light-yellow: #FFD666;
 
    --green-color: #37C77F;
+   --red-color: #FF669D;
 
    --title-color: #5C8599;
    --label-color: #8FA7B2;
@@ -49,4 +50,9 @@ button.success {
 
 button.success:hover{
    opacity: .9;
+}
+
+.error {
+   color: var(--red-color);
+   margin: .5rem 0rem;
 }

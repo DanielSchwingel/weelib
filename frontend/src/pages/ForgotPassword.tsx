@@ -6,17 +6,16 @@ import { Formik, Form } from 'formik';
 import Branding from '../components/Branding';
 import Input from '../components/form/Input';
 
-const ResetPassword: React.FC = ()=> {
+const ForgotPassword: React.FC = ()=> {
    return (
       <Branding>
-         <Link to='/forgot-password' className='back-link'>
+         <Link to='/login' className='back-link'>
             <FiArrowLeft size={24} color='#15C3D6' />
          </Link>
          <Formik
             initialValues= {
                {
-                  password: '',
-                  confirm_password: '',
+                  email: '',
                }
             }
             onSubmit={ (values,actions) => 
@@ -28,10 +27,9 @@ const ResetPassword: React.FC = ()=> {
          >
             {({ handleSubmit })=>(
                <Form>
-                  <h1>Redefinição de senha</h1>
-                  <p>Escolha uma nova senha para você acessar o dashboard do Weelib</p>
-                  <Input label='Nova senha' isPassword={true} fieldName='password' placeholder='Informe a nova senha' />
-                  <Input label='Repetir a senha' isPassword={true} fieldName='confirm_password' placeholder='Confirme sua senha' />
+                  <h1>Esqueci a senha</h1>
+                  <p>Sua redefinição de senha será enviada para o e-mail cadastrado.</p>
+                  <Input label='E-mail' fieldName='email' placeholder='Informe seu e-mail' />
                   <button className='success' type='submit'>Entrar </button>
                </Form>
             )}
@@ -40,4 +38,4 @@ const ResetPassword: React.FC = ()=> {
    )
 };
 
-export default ResetPassword;
+export default ForgotPassword;

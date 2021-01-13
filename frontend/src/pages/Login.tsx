@@ -2,12 +2,20 @@ import React, { useState } from 'react';
 import { Formik, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
+import * as Yup from 'yup';
 
 import Branding from '../components/Branding';
 import Input from '../components/form/Input';
 
 const Login: React.FC = ()=> {
    const [ remember, setRemember ] = useState(true);
+   const validationSchema = Yup.object().shape(
+      {
+         email: Yup.string().required('O e-mail é obrigatório').email('Informe um e-mail válido'),
+         password: Yup.string().required('A senha é obrigatória')
+      }
+   )
+
    return (
       <Branding>
          <Link to='/' className='back-link'>
@@ -26,6 +34,7 @@ const Login: React.FC = ()=> {
                   console.log(values)
                }
             }
+            validationSchema={validationSchema}
          >
             {({ handleSubmit })=>(
                <Form>
@@ -42,7 +51,7 @@ const Login: React.FC = ()=> {
                         />
                         <label htmlFor="remember">Lembrar-me</label>
                     </div>
-                  <Link to='/reset-password'>
+                  <Link to='/forgot-password'>
                      Esqueci minha senha
                   </Link>
                   </div>
