@@ -43,7 +43,7 @@ const Input: React.FC<iInputProps> = ({ label, fieldName, ...props })=> {
             />
          )}
 
-         { meta.error && meta.touched && (<label>{meta.error}</label>) }
+         { meta.error && meta.touched && (<span className='error'>{meta.error}</span>) }
       </div>
    )
 }
