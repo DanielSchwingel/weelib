@@ -3,10 +3,10 @@ import { Formik, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 
-import { validationsMessages } from '../../../utils/Message';
-import Input from '../Input';
+import { validationsMessages } from '../../utils/Message';
+import Input from '../fields/Input';
 
-const LoginForm: React.FC = ()=> {
+export const Login: React.FC = ()=> {
    const [ remember, setRemember ] = useState(true);
    const validationSchema = Yup.object().shape(
       {
@@ -56,5 +56,3 @@ const LoginForm: React.FC = ()=> {
       </Formik>
    )
 };
-
-export default LoginForm;

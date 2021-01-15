@@ -2,10 +2,10 @@ import React  from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
-import { validationsMessages } from '../../../utils/Message';
-import Input from '../Input';
+import { validationsMessages } from '../../utils/Message';
+import Input from '../fields/Input';
 
-const ForgotPasswordForm: React.FC = ()=> {
+export const ForgotPassword: React.FC = ()=> {
    const validationSchema = Yup.object().shape(
       {
          email: Yup.string().required(validationsMessages.required).email(validationsMessages.invalid)
@@ -38,5 +38,3 @@ const ForgotPasswordForm: React.FC = ()=> {
       </Formik>
    )
 };
-
-export default ForgotPasswordForm;

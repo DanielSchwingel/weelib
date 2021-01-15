@@ -2,10 +2,10 @@ import React from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
-import Input from '../Input';
-import { validationsMessages } from '../../../utils/Message';
+import Input from '../fields/Input';
+import { validationsMessages } from '../../utils/Message';
 
-const ResetPasswordForm: React.FC = ()=> {
+export const ResetPassword: React.FC = ()=> {
    const validationSchema = Yup.object().shape(
       {
          password: Yup.string().required(validationsMessages.required),
@@ -40,6 +40,4 @@ const ResetPasswordForm: React.FC = ()=> {
       </Formik>  
    )
 };
-
-export default ResetPasswordForm;
 

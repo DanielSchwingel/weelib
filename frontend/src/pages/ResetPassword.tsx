@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 
 import Branding from '../components/Branding';
-import ResetPasswordForm from '../components/form/forms/ResetPasswordForm';
+import { ResetPassword as Form } from '../components/forms/ResetPassword';
 
 const ResetPassword: React.FC = ()=> {
    return (
@@ -11,7 +11,7 @@ const ResetPassword: React.FC = ()=> {
          <Link to='/forgot-password' className='back-link'>
             <FiArrowLeft size={24} color='#15C3D6' />
          </Link>
-         <ResetPasswordForm />
+         <Form />
       </Branding>
    )
 };

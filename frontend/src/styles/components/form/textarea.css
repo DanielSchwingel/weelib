@@ -1,0 +1,28 @@
+#component-textarea {
+   display: flex;
+   flex-direction: column;
+}
+
+#component-textarea label {
+   font-weight: 600;
+   color: var(--label-color);
+   margin: 1rem 0rem; 
+}
+
+#component-textarea textarea {
+   width: 100%;
+   min-height: 120px;
+   max-height: 240px;
+   
+   border: 1px solid var(--border-input-color);
+   border-radius: 1.25rem;
+   outline: 0;
+
+   background: var(--background-input-color);
+   padding: 1rem;
+
+   color: var(--title-color);
+
+	resize: vertical;
+	line-height: 28px;
+}
