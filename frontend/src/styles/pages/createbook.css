@@ -1,0 +1,24 @@
+#page-create-book .content {
+   width: 50%;
+   margin: auto;
+}
+
+#page-create-book .content header {
+   color: var(--label-color);
+   padding: 2rem;
+   text-align: center;
+}
+
+#page-create-book .content main {
+   background-color: var(--white-color);   
+   padding: 3rem;
+   border-radius: 1rem;
+}
+
+#page-create-book .content main h1 {
+   color: var(--title-color);
+   padding-bottom: 1.5rem;
+   border-bottom: 1px solid var(--grey-color);
+
+}
+

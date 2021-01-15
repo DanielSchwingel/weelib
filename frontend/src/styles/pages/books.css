@@ -1,0 +1,14 @@
+#page-books .content {
+   width: 80%;
+   margin: auto;
+}
+
+#page-books .content header {
+   padding: 2.5rem 0rem 1.5rem 0rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   color: var(--title-color);
+   border-bottom: 1px solid #D3E2E5;
+}
+

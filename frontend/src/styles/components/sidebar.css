@@ -1,0 +1,56 @@
+#component-sidebar {
+   background: var(--background-main-color);
+   
+   width: 5rem;
+   height: 100vh;
+
+   position: absolute;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+}
+
+#component-sidebar img {
+   width: 4rem;
+}
+
+#component-sidebar main {
+   display: flex;
+   flex-direction: column;
+}
+
+#component-sidebar main a {
+   background: var(--dark-blue);
+   height: 3rem;
+   width: 3rem;
+   border-radius: 1rem;
+
+   margin-top: 1rem;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: background-color 0.2s;
+}
+
+#component-sidebar main a:hover {
+   background: var(--light-blue-color);
+}
+#component-sidebar main a.active {
+   background-color: var(--light-yellow);
+}
+
+#component-sidebar button {
+   background: var(--dark-blue);
+   border: none;
+   width: 3rem;
+   height: 3rem;
+   border-radius: 1rem;
+   margin-bottom: 1rem;
+}
+
+#component-sidebar button:hover {
+   background: var(--light-blue-color);
+   transition: background-color 0.2s;
+}
