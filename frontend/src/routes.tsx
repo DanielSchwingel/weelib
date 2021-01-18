@@ -8,7 +8,7 @@ import ForgotPassword from './pages/ForgotPassword';
 import Books from './pages/Books';
 import Users from './pages/Users';
 import CreateBook from './pages/CreateBook';
-import Book from './pages/Book';
+import User from './pages/User';
 
 const Routes: React.FC = ()=> {
    return (
@@ -21,6 +21,7 @@ const Routes: React.FC = ()=> {
             <Route path='/books' component={Books} />
             <Route path='/users' component={Users} />
             <Route path='/book/create' component={CreateBook} />
+            <Route path='/user/create' component={User} />
          </Switch>
       </BrowserRouter>
    )
