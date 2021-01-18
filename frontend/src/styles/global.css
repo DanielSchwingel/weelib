@@ -31,7 +31,7 @@ body {
    background: var(--grey-color);
 }
 
-body, input, button, textarea {
+body, input, button, textarea, select {
    font: 1rem Nunito, sans-serif;
 }
 

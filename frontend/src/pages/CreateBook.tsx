@@ -7,7 +7,7 @@ import '../styles/pages/createbook.css'
 const CreateBook: React.FC = ()=> {
    return (
       <div id='page-create-book'>
-         <Sidebar/>
+         <Sidebar isDashboard={false} />
          <div className='content'>
             <header>
                <p>Adicionando um livro</p>

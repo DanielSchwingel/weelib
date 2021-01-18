@@ -6,7 +6,7 @@ import '../styles/pages/books.css';
 const Books: React.FC = ()=> {
    return (
       <div id="page-books">
-         <Sidebar/>
+         <Sidebar isDashboard={true}/>
          <div className='content'>
             <header>
                <h1>Livros cadastrados</h1>
