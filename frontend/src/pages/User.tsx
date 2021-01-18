@@ -7,7 +7,7 @@ import '../styles/pages/user.css';
 const User: React.FC = ()=> {
    return (
       <div id='page-user'>
-         <Sidebar/>
+         <Sidebar isDashboard={false} />
          <div className='content'>
             <header>
                <p>Adicionando um usuário</p>
