@@ -7,8 +7,8 @@ import ResetPassword from './pages/ResetPassword';
 import ForgotPassword from './pages/ForgotPassword';
 import Books from './pages/Books';
 import Users from './pages/Users';
-import CreateBook from './pages/CreateBook';
 import User from './pages/User';
+import Book from './pages/Book';
 
 const Routes: React.FC = ()=> {
    return (
@@ -20,7 +20,7 @@ const Routes: React.FC = ()=> {
             <Route path='/reset-password' component={ResetPassword} />
             <Route path='/books' component={Books} />
             <Route path='/users' component={Users} />
-            <Route path='/book/create' component={CreateBook} />
+            <Route path='/book/create' component={Book} />
             <Route path='/user/create' component={User} />
          </Switch>
       </BrowserRouter>
