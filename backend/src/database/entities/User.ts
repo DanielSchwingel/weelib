@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn  } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, BeforeInsert, BeforeUpdate } from 'typeorm';
+import bcrypt from 'bcrypt';
 import UserCategory from './UserCategory';
 
 @Entity('users')
@@ -27,5 +28,11 @@ export default class User {
    }) 
    @JoinColumn({name: 'category_id'})
    category: UserCategory;
+
+   @BeforeInsert()
+   @BeforeUpdate()
+   hashPassword(){
+      this.password = bcrypt.hashSync(this.password, 10);
+   }
 
 }
