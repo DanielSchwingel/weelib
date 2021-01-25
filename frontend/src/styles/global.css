@@ -57,3 +57,8 @@ button.success:hover{
    color: var(--red-color);
    margin: .5rem 0rem;
 }
+
+.alert {
+   color: #F2994A !important;
+   text-align: center;
+}

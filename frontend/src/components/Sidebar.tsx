@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FiUsers, FiBook, FiPower, FiArrowLeft } from 'react-icons/fi';
 import { NavLink } from 'react-router-dom';
 
 import logoImg from '../assets/images/logo.svg';
 import iSidebar from '../interfaces/sidebar';
+import History from '../utils/History';
+import { AuthContext } from '../contexts/Authentication';
 import '../styles/components/sidebar.css';
 
 const Sidebar: React.FC<iSidebar> = ({ isDashboard })=> {
-   
+
+   function handleNavigateToBack(){
+      History.goBack();
+   }
+
+   const { signOut } = useContext(AuthContext);
    return (
       <aside id="component-sidebar">
          <header>
@@ -25,11 +32,11 @@ const Sidebar: React.FC<iSidebar> = ({ isDashboard })=> {
          )}
          <footer>
             {isDashboard ? (
-               <button>
+               <button onClick={signOut}>
                   <FiPower size={24} color='#FFFFFF' />
                </button>
             ) : (
-               <button>
+               <button onClick={handleNavigateToBack}>
                   <FiArrowLeft size={24} color='#FFFFFF' />
                </button>
             )}

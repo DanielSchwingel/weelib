@@ -13,14 +13,13 @@ export default {
       const repository = getRepository(User);
       const user = await repository.findOne({ email });
 
-      console.log(user?.category);
-      if (user?.category.id === 2) {
-         return response.status(401).json({ message: 'Sem permissão de acesso'})
-      }
-
       const match = await bcrypt.compare(password, String(user?.password));
 
       if (match) {
+         if (user?.category.id === 2) {
+            return response.status(401).json({ message: 'Sem permissão de acesso'})
+         }
+         
          const token = jwt.sign(
             {
                id: user?.id,
@@ -41,7 +40,7 @@ export default {
          )
       }
 
-      return response.status(401).json({ message: 'Dados inválidos'})
+      return response.status(404).json({ message: 'Dados inválidos'})
    },
 
    async forgotPassword(request: Request, response: Response) {
