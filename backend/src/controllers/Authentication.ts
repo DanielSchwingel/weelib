@@ -68,7 +68,7 @@ export default {
             subject: `Recuperação de senha: ${user.name}`,
             text: `Atualize sua senha através do seguinte link http://localhost:3000/reset-password?token=${token}`
          })         
-         return response.status(200).json({ message: 'E-mail enviado com sucesso' });
+         return response.status(200).json({ message: 'Encaminhamos um e-mail para você, verifique!' });
       } catch (error) {
          return response.status(500).json({ message: `Não foi possível enviar o -email: ${error}` })
       }

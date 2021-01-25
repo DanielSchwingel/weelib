@@ -1,11 +1,13 @@
-import React  from 'react';
+import React, { useState }  from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 
 import { validationsMessages } from '../../utils/Message';
 import Input from '../fields/Input';
+import api from '../../services/api';
 
 export const ForgotPassword: React.FC = ()=> {
+   const [ message, setMessage ] = useState('');
    const validationSchema = Yup.object().shape(
       {
          email: Yup.string().required(validationsMessages.required).email(validationsMessages.invalid)
@@ -19,10 +21,14 @@ export const ForgotPassword: React.FC = ()=> {
                email: '',
             }
          }
-         onSubmit={ (values,actions) => 
-            {
-               actions.setSubmitting(false);
-               console.log(values)
+         onSubmit={ (values,actions) => {
+            actions.setSubmitting(false);
+               api.post('forgot-password', { email: values.email })
+                  .then(response => {
+                     setMessage(response.data.message)
+                  }).catch(error => {
+                     setMessage(error.response.data.message);
+                  });
             }
          }
          validationSchema={validationSchema}
@@ -33,6 +39,7 @@ export const ForgotPassword: React.FC = ()=> {
                <p>Sua redefinição de senha será enviada para o e-mail cadastrado.</p>
                <Input label='E-mail' fieldName='email' placeholder='Informe seu e-mail' />
                <button className='success' type='submit'>Entrar </button>
+               <p className='alert'>{message}</p>
             </Form>
          )}
       </Formik>
