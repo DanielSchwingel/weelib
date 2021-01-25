@@ -5,7 +5,6 @@ import { FiArrowLeft } from 'react-icons/fi';
 import Branding from '../components/Branding';
 import { Login as Form } from '../components/forms/Login';
 
-
 const Login: React.FC = ()=> {
    return (
       <Branding>

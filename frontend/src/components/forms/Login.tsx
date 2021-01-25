@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Formik, Form } from 'formik';
 import { Link } from 'react-router-dom';
 import * as Yup from 'yup';
 
 import { validationsMessages } from '../../utils/Message';
+import { AuthContext } from '../../contexts/Authentication';
 import Input from '../fields/Input';
+import { iUserLogin } from '../../interfaces/authentication';
 
 export const Login: React.FC = ()=> {
    const [ remember, setRemember ] = useState(true);
+   const { signIn, message } = useContext(AuthContext);
+
    const validationSchema = Yup.object().shape(
       {
          email: Yup.string().required(validationsMessages.required).email(validationsMessages.invalid),
@@ -26,7 +30,12 @@ export const Login: React.FC = ()=> {
          onSubmit={ (values,actions) => 
             {
                actions.setSubmitting(false);
-               console.log(values)
+               const user = {
+                  email: values.email,
+                  password: values.password,
+                  rememberMe: remember
+               } as iUserLogin;
+               signIn(user);
             }
          }
          validationSchema={validationSchema}
@@ -51,6 +60,8 @@ export const Login: React.FC = ()=> {
                </Link>
                </div>
                <button className='success' type='submit'>Entrar </button>
+
+               <p className='alert'>{message}</p>
             </Form>
          )}
       </Formik>
