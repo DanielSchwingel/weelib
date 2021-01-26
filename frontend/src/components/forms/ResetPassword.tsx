@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
+import { useLocation } from 'react-router-dom';
 
 import Input from '../fields/Input';
 import { validationsMessages } from '../../utils/Message';
+import api from '../../services/api';
+
+function useQuery() {
+   return new URLSearchParams(useLocation().search);
+}
 
 export const ResetPassword: React.FC = ()=> {
+   const [ message, setMessage ] = useState('');
+   const [ error, setError ] = useState('');
+   const queryParams = useQuery();
+
+
    const validationSchema = Yup.object().shape(
       {
          password: Yup.string().required(validationsMessages.required),
@@ -23,7 +34,12 @@ export const ResetPassword: React.FC = ()=> {
          onSubmit={ (values,actions) => 
             {
                actions.setSubmitting(false);
-               console.log(values)
+               api.post(`reset-password?token=${queryParams.get('token')}`, { password: values.password })
+                  .then(response => {
+                     setMessage(response.data.message);
+                  }).catch(error => {
+                     setError(error.response.data.message);
+                  });
             }
          }
          validationSchema={validationSchema}
@@ -35,6 +51,8 @@ export const ResetPassword: React.FC = ()=> {
                <Input label='Nova senha' isPassword={true} fieldName='password' placeholder='Informe a nova senha' />
                <Input label='Repetir a senha' isPassword={true} fieldName='confirm_password' placeholder='Confirme sua senha' />
                <button className='success' type='submit'>Entrar </button>
+               {message && <p className='alert'>{message}</p>}
+               {error && <p className='alert'>{error}</p>}
             </Form>
          )}
       </Formik>  
