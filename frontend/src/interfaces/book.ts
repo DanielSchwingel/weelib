@@ -1,9 +1,10 @@
 interface iBook {
-   name: string, 
+   id?: number,
+   title: string, 
    author: string,
    publisher: string,
    about: string,
    purchase: string
 };
 
-export default iBook;
+export type { iBook };

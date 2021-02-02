@@ -1,0 +1,42 @@
+#component-bookcard {
+   width: 100%;
+   background-color: var(--white-color);
+   padding: 1.5rem 1rem;
+   border-radius: 1.7rem;
+}
+
+#component-bookcard .header {
+   padding: .0rem .5rem 0.5rem;
+   margin-bottom: 1rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   border-bottom: 1px solid #D3E2E5;
+
+}
+
+#component-bookcard .header .links {
+   display: flex;
+}
+
+#component-bookcard .header a {
+   background: var(--grey-color);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 3rem;
+   height: 3rem;
+   border-radius: 1rem;
+   margin-left: .8rem;
+}
+
+#component-bookcard .header p.name {
+   color: var(--title-color);
+   font-size: 1.4rem;
+   font-weight: bold;
+}
+
+#component-bookcard .main p {
+   color: var(--label-color);
+}
