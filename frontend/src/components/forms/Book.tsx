@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 
 import Input from '../fields/Input';
 import TextArea from '../fields/TextArea';
-import iBook from '../../interfaces/book';
+import { iBook } from '../../interfaces/book';
 import {validationsMessages} from '../../utils/Message';
 
 
@@ -23,7 +23,7 @@ export const Book: React.FC = ()=> {
       <Formik
          initialValues= {
             {
-               name: '',
+               title: '',
                author: '',
                publisher: '',
                about: '',
@@ -40,7 +40,7 @@ export const Book: React.FC = ()=> {
       >
          {( props: FormikProps<iBook> )=>(
             <Form>
-               <Input label='Nome' fieldName='name'/>
+               <Input label='Título' fieldName='title'/>
                <Input label='Autor' fieldName='author'/>
                <Input label='Editora' fieldName='publisher'/>
                <TextArea label='Sobre' name='about' />

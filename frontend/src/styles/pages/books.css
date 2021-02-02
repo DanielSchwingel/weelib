@@ -12,3 +12,9 @@
    border-bottom: 1px solid #D3E2E5;
 }
 
+#page-books .content main {
+   margin-top: 1.6rem;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: .8rem;
+}

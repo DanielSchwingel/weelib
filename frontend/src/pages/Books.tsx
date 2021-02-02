@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Sidebar from '../components/Sidebar';
+import BookCard from '../components/BookCard';
+import api from '../services/api';
 import '../styles/pages/books.css';
+import { iBook } from '../interfaces/book';
 
 const Books: React.FC = ()=> {
+   const [ books, setBooks ] = useState<Array<iBook>>() 
+
+   useEffect(()=> {
+      api.get('books')
+         .then(response => {
+            setBooks(response.data)
+            console.log(response.data)
+         });
+      
+   },[]);
+
+
    return (
       <div id="page-books">
          <Sidebar isDashboard={true}/>
@@ -13,7 +28,12 @@ const Books: React.FC = ()=> {
                <span>32 livros cadastrados</span>
             </header>
             <main>
-
+               
+               {books?.map(book=> {
+                  return (
+                     <BookCard key={book.id} book={book} />
+                  )
+               })}
             </main>
          </div>
       </div>
